@@ -1,7 +1,12 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'svelte'],
+  plugins: [
+    '@typescript-eslint',
+    'svelte',
+    '@stylistic/eslint-plugin-js',
+    'sql',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -39,6 +44,20 @@ module.exports = {
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
         allowSeparatedGroups: true,
+      },
+    ],
+    'sql/format': [
+      2,
+      {
+        ignoreExpressions: false,
+        ignoreInline: true,
+        ignoreTagless: true,
+      },
+    ],
+    'sql/no-unsafe-query': [
+      2,
+      {
+        allowLiteral: false,
       },
     ],
   },
