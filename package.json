@@ -1,10 +1,11 @@
 {
   "name": "svelte-pg-authjs",
-  "version": "0.0.1",
+  "version": "1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --host",
-    "build": "vite build",
+    "dev": "concurrently \"vite dev --host\" \"docker compose up --force-recreate db\"",
+    "build": "docker compose up --force-recreate",
+    "vitebuild": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -38,6 +39,7 @@
   "dependencies": {
     "@auth/pg-adapter": "^1.4.2",
     "@auth/sveltekit": "^1.2.0",
+    "concurrently": "^9.0.1",
     "pg": "^8.12.0"
   }
 }
