@@ -7,7 +7,7 @@ export const pool = new Pool(
         connectionString: process.env.CONNECTION_STRING,
       }
     : {
-        user: 'templateUser',
+        user: 'templateuser',
         host: process.env.DATABASE_HOST || 'localhost',
         database: 'templateDB',
         password: 'testpassword',
