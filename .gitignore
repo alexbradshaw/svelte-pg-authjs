@@ -130,5 +130,10 @@ dist
 .pnp.*
 
 .svelte-kit
+/.svelte-kit
 .DS_Store
 build
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

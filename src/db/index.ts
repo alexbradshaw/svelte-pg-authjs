@@ -8,10 +8,10 @@ export const pool = new Pool(
       }
     : {
         user: 'templateuser',
-        host: process.env.DATABASE_HOST || 'localhost',
+        host: process.env.DATABASE_HOST || '0.0.0.0',
         database: 'templateDB',
         password: 'testpassword',
-        port: 5432,
+        port: 5433,
       },
 );
 
