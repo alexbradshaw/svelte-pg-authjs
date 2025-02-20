@@ -1,7 +1,3 @@
-CREATE ROLE templateuser
-WITH
-    LOGIN NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION PASSWORD 'testpassword';
-
 CREATE TABLE verification_token (
     identifier TEXT NOT NULL,
     expires TIMESTAMPTZ NOT NULL,
@@ -41,15 +37,3 @@ CREATE TABLE users (
     image TEXT,
     PRIMARY KEY (id)
 );
-
-GRANT pg_read_all_stats TO templateuser;
-
-GRANT
-INSERT
-,
-SELECT, DELETE,
-UPDATE, REFERENCES, TRIGGER ON ALL TABLES IN SCHEMA public TO templateuser;
-
-GRANT USAGE,
-SELECT
-    ON ALL SEQUENCES IN SCHEMA public TO templateuser;
